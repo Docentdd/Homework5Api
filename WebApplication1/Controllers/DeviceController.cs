@@ -11,15 +11,15 @@ using Microsoft.AspNetCore.Mvc;
             { 
                 Id = 1, 
                 Name = "Device1", 
-                isEnabled = true, 
-                batteryLevel = 67
+                IsEnabled = true, 
+                BatteryLevel = 67
             },
             new Smartwatch 
             { 
                 Id = 2, 
                 Name = "Device2", 
-                isEnabled = false, 
-                batteryLevel =  34
+                IsEnabled = false, 
+                BatteryLevel =  34
             }
         };
         private static List<Embedded> _embeddedDevices = new List<Embedded>
@@ -28,16 +28,16 @@ using Microsoft.AspNetCore.Mvc;
             { 
                 Id = 1, 
                 Name = "Device1", 
-                ipAdress = "192.168.1.1", 
-                isConnected = true, 
+                IpAdress = "192.168.1.1", 
+                IsConnected = true, 
                 NetworkName = "Network1" 
             },
             new Embedded 
             { 
                 Id = 2, 
                 Name = "Device2", 
-                ipAdress = "192.168.1.2", 
-                isConnected = false, 
+                IpAdress = "192.168.1.2", 
+                IsConnected = false, 
                 NetworkName = "Network2" 
             }
 
@@ -47,14 +47,14 @@ using Microsoft.AspNetCore.Mvc;
             {
                 Id = 1,
                 Name = "Device1",
-                isEnabled = true,
+                IsEnabled = true,
                 OperatingSystem = "Windows 10"
             },
             new PersonalComputer
             {
                 Id = 2,
                 Name = "Device2",
-                isEnabled = false,
+                IsEnabled = false,
                 OperatingSystem = "Linux"
             }
         };
@@ -126,8 +126,8 @@ using Microsoft.AspNetCore.Mvc;
             if (device == null) return Results.NotFound($"Smartwatch {id} not found");
     
             device.Name = updatedDevice.Name;
-            device.isEnabled = updatedDevice.isEnabled;
-            device.batteryLevel = updatedDevice.batteryLevel;
+            device.IsEnabled = updatedDevice.IsEnabled;
+            device.BatteryLevel = updatedDevice.BatteryLevel;
     
             return Results.NoContent();
         }
@@ -139,8 +139,8 @@ using Microsoft.AspNetCore.Mvc;
             if (device == null) return Results.NotFound($"Embedded device {id} not found");
     
             device.Name = updatedDevice.Name;
-            device.ipAdress = updatedDevice.ipAdress;
-            device.isConnected = updatedDevice.isConnected;
+            device.IpAdress = updatedDevice.IpAdress;
+            device.IsConnected = updatedDevice.IsConnected;
             device.NetworkName = updatedDevice.NetworkName;
     
             return Results.NoContent();
@@ -153,7 +153,7 @@ using Microsoft.AspNetCore.Mvc;
             if (device == null) return Results.NotFound($"Personal computer {id} not found");
     
             device.Name = updatedDevice.Name;
-            device.isEnabled = updatedDevice.isEnabled;
+            device.IsEnabled = updatedDevice.IsEnabled;
             device.OperatingSystem = updatedDevice.OperatingSystem;
     
             return Results.NoContent();
