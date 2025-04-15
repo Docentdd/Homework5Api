@@ -63,21 +63,21 @@ using Microsoft.AspNetCore.Mvc;
         public IResult AddSmartwatch([FromBody] Smartwatch device)
         {
             _smartwatches.Add(device);
-            return Results.CreatedAtRoute(nameof(GetSmartwatchById), new { id = device.Id }, device);
+            return Results.CreatedAtRoute("Post", device);
         }
     
         [HttpPost("embedded")]
         public IResult AddEmbeddedDevice([FromBody] Embedded device)
         {
             _embeddedDevices.Add(device);
-            return Results.CreatedAtRoute(nameof(GetEmbeddedDeviceById), new { id = device.Id }, device);
+            return Results.CreatedAtRoute("Post", device);            
         }
     
         [HttpPost("pc")]
         public IResult AddPersonalComputer([FromBody] PersonalComputer device)
         {
             _personalComputers.Add(device);
-            return Results.CreatedAtRoute(nameof(GetPersonalComputerById), new { id = device.Id }, device);
+            return Results.CreatedAtRoute("Post", device);            
         }
     
         [HttpGet("smartwatch")]
