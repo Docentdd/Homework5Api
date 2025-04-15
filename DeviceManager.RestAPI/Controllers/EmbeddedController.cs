@@ -1,30 +1,33 @@
 // using Microsoft.AspNetCore.Mvc;
 //
-// namespace WebApplication1.Controllers;
 //
-// [Route("api/pcdevice")]
+// namespace DeviceManager.RestAPI.Controllers;
+// [Route("api/embdevice")]
 // [ApiController]
-// public class PersonalComputerController : ControllerBase
+// public class EmbeddedController : ControllerBase
 // {
-//     public List<PersonalComputer> _devices = new List<PersonalComputer>
+//     private static List<Embedded> _devices = new List<Embedded>
 //     {
-//         new PersonalComputer
-//         {
-//             Id = 1,
-//             Name = "Device1",
-//             isEnabled = true,
-//             OperatingSystem = "Windows 10"
+//         new Embedded 
+//         { 
+//             Id = 1, 
+//             Name = "Device1", 
+//             ipAdress = "192.168.1.1", 
+//             isConnected = true, 
+//             NetworkName = "Network1" 
 //         },
-//         new PersonalComputer
-//         {
-//             Id = 2,
-//             Name = "Device2",
-//             isEnabled = false,
-//             OperatingSystem = "Linux"
+//         new Embedded 
+//         { 
+//             Id = 2, 
+//             Name = "Device2", 
+//             ipAdress = "192.168.1.2", 
+//             isConnected = false, 
+//             NetworkName = "Network2" 
 //         }
+//
 //     };
 //     [HttpPost]
-//     public IActionResult Post([FromBody] PersonalComputer device)
+//     public IActionResult Post([FromBody] Embedded device)
 //     {
 //         _devices.Add(device);
 //         return CreatedAtAction("Post", device);
@@ -45,18 +48,19 @@
 //         return Ok(device);
 //     }
 //     [HttpPut("{id}")]
-//     public IActionResult EditDevice(int id, [FromBody] PersonalComputer updatedDevice)
+//     public IActionResult EditDevice(int id, [FromBody] Embedded updatedDevice)
 //     {
 //         var device = _devices.FirstOrDefault(d => d.Id == id);
 //         if (device == null)
 //         {
 //             return NotFound($"Device {id} not found");
 //         }
-//
+//     
 //         device.Name = updatedDevice.Name;
-//         device.OperatingSystem = updatedDevice.OperatingSystem;
-//         device.isEnabled = updatedDevice.isEnabled;
-//
+//         device.ipAdress = updatedDevice.ipAdress;
+//         device.isConnected = updatedDevice.isConnected;
+//         device.NetworkName = updatedDevice.NetworkName;
+//     
 //         return Ok(device);
 //     }
 //     [HttpDelete("{id}")]
@@ -67,8 +71,9 @@
 //         {
 //             return NotFound($"Device {id} not found");
 //         }
-//
+//     
 //         _devices.Remove(device);
-//         return NoContent();
+//         return Ok();
 //     }
+//     
 // }

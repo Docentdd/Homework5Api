@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{B1141716-B6B9-4A90-BEDB-5EF11076DCA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceManager.Repository", "DeviceManager.Repository\DeviceManager.Repository.csproj", "{B1141716-B6B9-4A90-BEDB-5EF11076DCA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{99962EE0-2E15-4842-97B9-7FB278A3E9D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceManager.RestAPI", "DeviceManager.RestAPI\DeviceManager.RestAPI.csproj", "{99962EE0-2E15-4842-97B9-7FB278A3E9D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
