@@ -80,19 +80,19 @@ using Microsoft.AspNetCore.Mvc;
             return Results.CreatedAtRoute("Post", device);            
         }
     
-        [HttpGet("smartwatch")]
+        [HttpGet("smartwatches")]
         public IResult GetAllSmartwatches()
         {
             return Results.Ok(_smartwatches);
         }
     
-        [HttpGet("embedded")]
+        [HttpGet("embeddedes")]
         public IResult GetAllEmbeddedDevices()
         {
             return Results.Ok(_embeddedDevices);
         }
     
-        [HttpGet("pc")]
+        [HttpGet("pces")]
         public IResult GetAllPersonalComputers()
         {
             return Results.Ok(_personalComputers);
